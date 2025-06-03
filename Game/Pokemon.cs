@@ -13,5 +13,20 @@
             Type = type;
             Attacks = attacks ?? new List<Attack>();
         }
+
+        public void RandomAttack()
+        {
+            // Todo: Pick a random attack from the list of attacks and invoke its Use method.
+        }
+
+        public void Attack()
+        {
+            // Todo: Let the user pick an attack from the list of attacks and invoke its Use method.
+        }
+
+        public void RaiseLevel()
+        {
+            // Todo: Increment the level og the given pokemon and print out that the pokemon has leveled up.
+        }
     }
 }
