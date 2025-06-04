@@ -2,8 +2,8 @@
 {
     internal abstract class Pokemon
     {
-        public string Name { get; }
-        public int Level { get; private set; }
+        public string Name { get; internal set; }
+        public int Level { get; internal set; }
         public ElementType Type { get; protected set; }
         public List<Attack> Attacks { get; }
         public Pokemon(string name, int level, ElementType type, List<Attack> attacks)
