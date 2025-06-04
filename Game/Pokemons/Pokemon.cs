@@ -21,12 +21,20 @@
 
         public void Attack()
         {
-            // Todo: Let the user pick an attack from the list of attacks and invoke its Use method.
+            // Let the user pick an attack from the list of attacks and invoke its Use method.
+            Console.WriteLine($"Choose an attack for {Name}:");
+            for (int i = 0; i < Attacks.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {Attacks[i].Name}");
+            }
+            int choice = int.Parse(Console.ReadLine() ?? "1") - 1; // Default to first attack if input is invalid
+            Attacks[choice].Use(Level);
         }
 
         public void RaiseLevel()
         {
-            // Todo: Increment the level og the given pokemon and print out that the pokemon has leveled up.
+            // Increment the level of the given pokemon and print out that the pokemon has leveled up.
+            Level += 1;
         }
     }
 }
