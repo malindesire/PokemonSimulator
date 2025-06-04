@@ -1,10 +1,10 @@
-﻿namespace Game
+﻿namespace Game.Characters
 {
     internal abstract class Pokemon
     {
         public string Name { get; }
         public int Level { get; private set; }
-        public ElementType Type { get; }
+        public ElementType Type { get; protected set; }
         public List<Attack> Attacks { get; }
         public Pokemon(string name, int level, ElementType type, List<Attack> attacks)
         {
