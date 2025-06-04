@@ -1,4 +1,4 @@
-﻿namespace Game.Characters
+﻿namespace Game.Pokemons
 {
     internal abstract class Pokemon
     {
