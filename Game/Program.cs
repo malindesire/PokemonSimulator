@@ -14,15 +14,19 @@ var waterfall = new Attack("Waterfall", ElementType.Water, 2);
 var whirlpool = new Attack("Whirlpool", ElementType.Water, 10);
 var steamEruption = new Attack("Steam Eruption", ElementType.Water, 15);
 
-var charmander = new Charmander(25, new List<Attack> { inferno, flamethrower, ember });
-var firePokemon = new FirePokemon("Charizard", 22, new List<Attack> { inferno, flamethrower, ember });
+var charmander = new Charmander(25, [inferno, flamethrower, ember]);
+var charizard = new FirePokemon("Charizard", 32, [inferno, flamethrower, ember]);
+var charmeleon = new FirePokemon("Charmeleon", 35, [inferno, flamethrower, ember]);
 
-var pikachu = new Pikachu(15, new List<Attack> { electroBall, thunderbolt, spark });
+var pikachu = new Pikachu(15, [electroBall, thunderbolt, spark]);
+var magnemite = new ElectricPokemon("Magnemite", 21, [electroBall, thunderbolt, spark]);
+var voltorb = new ElectricPokemon("Voltorb", 29, [electroBall, thunderbolt, spark]);
 
-var squirtle = new Squirtle(10, new List<Attack> { waterfall, whirlpool, steamEruption });
+var squirtle = new Squirtle(10, [waterfall, whirlpool, steamEruption]);
+var blastoise = new WaterPokemon("Blastoise", 32, [waterfall, whirlpool, steamEruption]);
+var poliwag = new WaterPokemon("Poliwag", 17, [waterfall, whirlpool, steamEruption]);
 
-var pokemons = new List<Pokemon> { firePokemon, charmander, pikachu };
-
+var pokemons = new List<Pokemon> { charizard, charmander, charmeleon, pikachu, magnemite, voltorb, squirtle, blastoise, poliwag };
 foreach (var pokemon in pokemons)
 {
     pokemon.RaiseLevel();
