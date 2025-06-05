@@ -2,6 +2,7 @@
 {
     internal abstract class Pokemon
     {
+        private readonly Random random = new Random();
         public string Name { get; internal set; }
         public int Level { get; internal set; }
         public ElementType Type { get; protected set; }
@@ -16,7 +17,10 @@
 
         public void RandomAttack()
         {
-            // Todo: Pick a random attack from the list of attacks and invoke its Use method.
+            // Pick a random attack from the list of attacks and invoke its Use method.
+            int randomIndex = random.Next(0, Attacks.Count - 1);
+
+            Attacks[randomIndex].Use(Level);
         }
 
         public void Attack()
@@ -27,7 +31,8 @@
             {
                 Console.WriteLine($"{i + 1}. {Attacks[i].Name}");
             }
-            int choice = int.Parse(Console.ReadLine() ?? "1") - 1; // Default to first attack if input is invalid
+            int choice = int.Parse(Console.ReadLine() ?? string.Empty) - 1; // ToDo: Handle if input is invalid
+           
             Attacks[choice].Use(Level);
         }
 
