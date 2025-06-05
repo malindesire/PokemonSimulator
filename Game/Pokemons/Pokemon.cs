@@ -31,9 +31,25 @@
             {
                 Console.WriteLine($"{i + 1}. {Attacks[i].Name}");
             }
-            int choice = int.Parse(Console.ReadLine() ?? string.Empty) - 1; // ToDo: Handle if input is invalid
-           
-            Attacks[choice].Use(Level);
+
+            bool success = int.TryParse(Console.ReadLine(), out int choice);
+            choice -= 1; // Adjust for zero-based index
+
+            if (success)
+            {
+                if (choice >= 0 && choice < Attacks.Count)
+                {
+                    Attacks[choice].Use(Level);
+                }
+                else
+                {
+                    Console.WriteLine("That choice doesn't exist");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, you must choose a number.");
+            }
         }
 
         public void RaiseLevel()
