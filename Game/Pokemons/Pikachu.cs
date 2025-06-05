@@ -9,10 +9,11 @@ namespace Game.Pokemons
 
         public void Evolve()
         {
+            string oldName = Name; // Store the old name
             Name = "Raichu";
             Level += 10; // Evolving increases the level by 10
 
-            Console.WriteLine($"Pikachu is evolving... Now it's {Name}! Level {Level}!");
+            Console.WriteLine($"{oldName} is evolving... Now it's {Name}! Level {Level}!");
         }
     }
 }
