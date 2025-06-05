@@ -30,7 +30,7 @@ var pokemons = new List<Pokemon> { charizard, charmander, charmeleon, pikachu, m
 foreach (var pokemon in pokemons)
 {
     pokemon.RaiseLevel();
-    pokemon.RandomAttack();
+    pokemon.Attack();
 
     if (pokemon is IEvolvable evolvable)
     {
