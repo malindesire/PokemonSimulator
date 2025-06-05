@@ -18,7 +18,7 @@
         public void RandomAttack()
         {
             // Pick a random attack from the list of attacks and invoke its Use method.
-            int randomIndex = random.Next(0, Attacks.Count - 1);
+            int randomIndex = random.Next(Attacks.Count);
 
             Attacks[randomIndex].Use(Level);
         }
